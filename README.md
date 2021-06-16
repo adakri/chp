@@ -4,10 +4,16 @@
 
 # icp-testbench
 
-Test bench for different ICP implementations
+Test bench for different ICP implementations.
 
-## src/opencv_icp
+## OpenCV's ICP
+
 The goal of this project is to provide a test bench for the OpenCV ICP algorithm, the main objective being to determine the influence of all the matching problem's parameyers (point cloud properties, transformation parameters and ICP initialization) on the efficiency and precision of the ICP's resulting transformation pose.
+
+### src/opencv_icp
+Contains different C++ files for ICP tests. 
+**Models/** Default folder for the point clouds that could be used for the testing.
+**test_files** Default folder for output files (testing results).
 
 ### OpenCV's ICP implementation
 
@@ -36,3 +42,4 @@ To execute the code on sample point cloud **sample.ply**  using ICP parameters l
 ```shell
 make sample.ply param.txt
 ```
+The output is a **.csv** file named after the parameter the user chose to change: it details through different metrics (L1,L2,Linf and L2inv norms) between the real and ICP transfomation matrices as well as the difference betwen the real and ICP motion parameters.
